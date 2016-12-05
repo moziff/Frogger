@@ -94,6 +94,7 @@
      <Compile Include="Assets\scripts + Audio\Frog.cs" />
      <Compile Include="Assets\scripts + Audio\GameOverMessage.cs" />
      <Compile Include="Assets\scripts + Audio\LaneSpawner.cs" />
+     <Compile Include="Assets\scripts + Audio\LethalCollider.cs" />
      <Compile Include="Assets\scripts + Audio\LevelManager.cs" />
      <Compile Include="Assets\scripts + Audio\NewBehaviourScript.cs" />
      <Compile Include="Assets\scripts + Audio\TreeSpawner.cs" />
