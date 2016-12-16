@@ -145,5 +145,6 @@
 'Assets/scripts + Audio/TreeSpawner.cs'
 'Assets/scripts + Audio/Vehicle.cs'
 'Assets/scripts + Audio/VehicleSpawner.cs'
+'Assets/scripts + Audio/WaterTrunkSpawner.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

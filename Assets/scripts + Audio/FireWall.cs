@@ -33,7 +33,7 @@ public class FireWall : MonoBehaviour {
 
 	void IsBurnt(){
 
-		if (player.transform.position.z < transform.position.z) {
+		if (player.transform.position.z +2.0f < transform.position.z) {
 			lm.IsGameOver = true;
 		}
 		

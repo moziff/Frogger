@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class VehicleSpawner : MonoBehaviour {
 	public Vehicle[] vehicle_prefabs;
+	public List<Vehicle> vehicle_list;
+
+
+	public float meanTime = 2;
+
+	float nextSpawnTime = 0;
 
 	public float lane_speed;
 
@@ -17,10 +24,18 @@ public class VehicleSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (vehicle.transform.localPosition.x < -0.5f) {
-			Destroy(vehicle.gameObject);
-			CreateVehicle ();
+		if (Time.time > nextSpawnTime)
+		{
+			CreateVehicle();
+			nextSpawnTime = Time.time - Mathf.Log (Random.value) * meanTime;
 		}
+		foreach (Vehicle veh in vehicle_list) {
+			if (veh.transform.localPosition.x < -0.5f) {
+				vehicle_list.Remove (veh);
+				Destroy(veh.gameObject);
+			}
+		}
+
 	}
 
 	void CreateVehicle(){
@@ -28,8 +43,7 @@ public class VehicleSpawner : MonoBehaviour {
 		vehicle = Instantiate<Vehicle>(vehicle_prefabs[vehicleIndex]);
 		vehicle.transform.parent = transform;
 		vehicle.transform.localPosition = new Vector3(.5f, .5f, 0);
-		vehicle.setSpeed = Random.Range(0.7f,2.0f);
-//		
+		vehicle.setSpeed = 0.6f;
+		vehicle_list.Add (vehicle);
 	}
-
 }
